@@ -22,6 +22,7 @@ func main() {
 		Addr: ":" + portString,
 	}
 
+	 log .printf("Server starting on port %v", portString)
      err = srv.listenAndServer()
 	 if err != nil{
 		log.fatal(err)
