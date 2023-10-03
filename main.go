@@ -4,6 +4,10 @@ import "fmt"
        "os"
 	   "Log"
 
+type apiConfig struct {
+	 DB *database.Queries 
+}	   
+
 func main() {
 	fmt.Println("hello world")
 
