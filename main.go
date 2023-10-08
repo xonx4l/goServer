@@ -19,6 +19,17 @@ func main() {
 
 	}
 
+	dbURL := os.Getenv("DB_URL")
+	if portString = "" {
+		log.fatal("PORT is not found in the environment")
+
+	}
+
+	conn, err := sql.Open("postgres",dbURl)
+	if err != nil{
+		log.Fatal("can't connect to database: ", err)
+	}
+
 	router := chi.NewRouter()
 
 	router.Use(cors.Handler(cors.Optional{
