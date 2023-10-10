@@ -30,6 +30,15 @@ func main() {
 		log.Fatal("can't connect to database: ", err)
 	}
 
+	queries, err:=database.New(conn)
+	if err != nil{
+		log.Fatal("Can't create to db connections:", err)
+	}
+
+	apiCfg := apiConfig{
+		DB:queries,
+	}
+
 	router := chi.NewRouter()
 
 	router.Use(cors.Handler(cors.Optional{
